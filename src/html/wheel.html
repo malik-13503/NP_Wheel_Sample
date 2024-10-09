@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Spin Wheel</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="data:image/x-icon;," type="image/x-icon" />
+    <link rel="stylesheet" href="../assets/css/wheel.css" />
+
+
+ 
+
+    <script>
+      window.onload = () => {
+        const quadrants = [
+  {
+    label: "Keychain",
+    backgroundColor: "#ED1F23",
+    labelColor: "#FFFFFF",
+  },
+  {
+    label: "Pen",
+    backgroundColor: "#231F20",
+    labelColor: "#FFFFFF",
+  },
+  {
+    label: "Bag",
+    backgroundColor: "#FFFFFF",
+    labelColor: "#231F20",
+  },
+  {
+    label: "Bottle",
+    backgroundColor: "#ED1F23",
+    labelColor: "#FFFFFF",
+  },
+  {
+    label: "Cup",
+    backgroundColor: "#231F20",
+    labelColor: "#FFFFFF",
+  },
+  {
+    label: "Keychain",
+    backgroundColor: "#FFFFFF",
+    labelColor: "#231F20",
+  },
+  {
+    label: "Pen",
+    backgroundColor: "#ED1F23",
+    labelColor: "#FFFFFF",
+  },
+  {
+    label: "Bag",
+    backgroundColor: "#231F20",
+    labelColor: "#FFFFFF",
+  },
+  {
+    label: "Bottle",
+    backgroundColor: "#FFFFFF",
+    labelColor: "#231F20",
+  },
+  {
+    label: "Cup",
+    backgroundColor: "#ED1F23",
+    labelColor: "#FFFFFF",
+  },
+  {
+    label: "Keychain",
+    backgroundColor: "#231F20",
+    labelColor: "#FFFFFF",
+  },
+  {
+    label: "Pen",
+    backgroundColor: "#FFFFFF",
+    labelColor: "#231F20",
+  },
+  {
+    label: "Bag",
+    backgroundColor: "#ED1F23",
+    labelColor: "#FFFFFF",
+  },
+  {
+    label: "Bottle",
+    backgroundColor: "#231F20",
+    labelColor: "#FFFFFF",
+  },
+  {
+    label: "Cup",
+    backgroundColor: "#FFFFFF",
+    labelColor: "#231F20",
+  }
+];
+
+        const container = document.querySelector(".wheel-wrapper");
+
+        const props = {
+          items: quadrants,
+          borderColor: "#A68C5B", // Add the borderColor property
+          borderWidth: 6, // Add the borderWidth property
+          debug: false, // Add the debug property
+          image: "../assets/images/npmiddle.png", // Add the image property
+          isInteractive: true, // Add the isInteractive property
+          itemBackgroundColors: ["#C0150B"], // Add the itemBackgroundColors property
+          itemLabelAlign: "right", // Add the itemLabelAlign property
+          itemLabelBaselineOffset: 0, // Add the itemLabelBaselineOffset property
+          itemLabelColors: ["#ffffff"], // Add the itemLabelColors property
+          itemLabelFont: "sans-serif", 
+          itemLabelFontSizeMax: 24, 
+          itemLabelRadius: 0.9,
+          itemLabelRadiusMax: 0.2, 
+          itemLabelRotation: 0, // Add the itemLabelRotation property
+          itemLabelStrokeColor: "#fff", // Add the itemLabelStrokeColor property
+          itemLabelStrokeWidth: 0.05, // Add the itemLabelStrokeWidth property
+          lineColor: "#A68C5B", 
+          lineWidth: 6, 
+          radius: .88, 
+          rotation: 210, 
+          rotationResistance: -35, 
+          rotationSpeed: 0, 
+          rotationSpeedMax: 250, 
+          offset: { w: 0, h: 0 }, 
+          overlayImage: "../assets/images/npframe2.png",
+          pointerAngle: 0, 
+        };
+
+        window.wheel = new spinWheel.Wheel(container, props);
+
+        // Define a function to open the selected link
+        function openSelectedLink(selectedItemIndex) {
+          const selectedLink = quadrants[selectedItemIndex].link;
+          window.open(selectedLink, "_self"); //blank for a new tab
+        }
+
+        // Define a callback for the onRest event to show a pop-up before opening the link
+        wheel.onRest = (event) => {
+          const selectedItemIndex = event.currentIndex;
+          const selectedLabel = quadrants[selectedItemIndex].label;
+          // Show a pop-up with the label for 2 seconds
+          // alert(`Quiz Category: ${selectedLabel}`);
+          // After 2 seconds, open the selected link
+          setTimeout(() => {
+            openSelectedLink(selectedItemIndex);
+          }, 1000); // Delayed opening of the link after 5 seconds
+        };
+      };
+    </script>
+
+
+
+
+  </head>
+  <body>
+    <div id="preloader">
+      <div class="loader"></div>
+    </div>
+    
+    <div class="wheel-wrapper">
+      <!-- <h1 style="color: #FFE5CA; font-size: 7vw; text-align: center; padding-top: 10%; padding-bottom: 0%;">SPIN THE WHEEL</h1> -->
+    </div>
+
+    <!-- <div class="gui-wrapper" style="background-color: rgba(0, 0, 0, 0.1)">
+      <h1 style="color: #ffe5ca; font-size: 5vw; text-align: center">
+        Swipe down to spin
+      </h1>
+    </div> -->
+    <span><a href="group1.html"><button type="link" class="back-link">Quiz</button></a></span>
+  </body>
+  <script src="../js/spin-wheel-iife.js"></script>
+</html>

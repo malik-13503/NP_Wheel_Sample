@@ -1,0 +1,152 @@
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Lucida Grande", sans-serif;
+    font-size: 15px;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    overscroll-behavior-y: contain;
+    position: static;
+    width: 100%;
+    touch-action: none;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* justify-items: stretch;
+    align-items: stretch; */
+    background-image: url("../images/npbg1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .wheel-wrapper {
+    overflow: hidden;
+    height: 60vh;
+    width: 100%; 
+    transform: translateY(0%); /* adjust as needed */
+
+    /* margin-top: 30%; */
+  }
+
+  .gui-wrapper {
+    padding: 10px;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  select {
+    padding: 2px;
+  }
+  label {
+    margin-right: 5px;
+  }
+  #preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #fff;
+  }
+  .loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    margin: -25px 0 0 -25px;
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #009AC7;
+    animation: spin 2s linear infinite;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .back-link {
+    position: absolute;
+    bottom: -50px;
+    font-size: 50px;
+    left: 15px;
+    opacity: 1.6;
+    text-decoration: none;
+    color: #fffbc2;
+  }
+  .back-link:hover {
+    opacity: 1;
+    
+  }
+  .back-link {
+    cursor: pointer;
+    position: relative;
+    padding: 2.5rem 7.5rem;
+    border-radius: 3.75rem;
+    line-height: 2.5rem;
+    font-size: 6rem;
+    font-weight: 600;
+    
+    border: 1px solid #af7d21;
+    background-image: linear-gradient(-180deg, #ff1d1d 0%, #e10000 100%);
+    box-shadow: 0 1rem 1.25rem 0 rgba(255, 21, 25, 0.5),
+                0 -0.25rem 1.5rem rgb(197, 117, 32) inset,
+                0 0.75rem 0.5rem rgba(36, 20, 13, 0.4) inset,
+                0 0.25rem 0.5rem 0 rgb(207, 70, 70) inset;
+  }
+  
+  .back-link span {
+    color: transparent;
+    background-image: linear-gradient(0deg, #a70000 0%, #FEFAFD 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 2px 2px hsla(290, 100%, 20%, 1));
+    
+  }
+  
+  .back-link::before {
+    content: "";
+    display: block;
+    height: 0.25rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 7.5rem);
+    background: #fff;
+    border-radius: 100%;
+    
+    opacity: 0.7;
+    background-image: linear-gradient(-270deg, rgba(255,255,255,0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255,255,255,0.00) 100%);
+  }
+  
+  .back-link::after {
+    content: "";
+    display: block;
+    height: 0.25rem;
+    position: absolute;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 7.5rem);
+    background: #fff;
+    border-radius: 100%;
+    
+    filter: blur(1px);
+    opacity: 0.05;
+    background-image: linear-gradient(-270deg, rgba(255,255,255,0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255,255,255,0.00) 100%);
+  }
+  
