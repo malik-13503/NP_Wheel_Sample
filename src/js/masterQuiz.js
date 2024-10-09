@@ -191,7 +191,7 @@ function endGame() {
     <br> 
     <span style='color: #ED1F23; font-size: 8vw; font-weight: bold;'>Winner!</span> 
     <br>
-    <img src="../assets/images/npwin.png" alt="Winner Image" style="max-width: auto; height: 40vh; padding-top: 40px;" class="zoom-in-animation bounce-zoom-in-animation wiggle-animation">
+    <img src="../assets/images/npwin.png" alt="Winner Image" style="max-width: auto; height: 40vh; padding-top: 60px;" class="zoom-in-animation bounce-zoom-in-animation wiggle-animation">
     </div>
     `;
 
